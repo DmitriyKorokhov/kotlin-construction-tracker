@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "173005801962",
+    "project_id": "kotline-construction-tracker",
+    "storage_bucket": "kotline-construction-tracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173005801962:android:0f6203d469ff4995550a93",
+        "android_client_info": {
+          "package_name": "com.yourname.tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVuWy50zquTB8nULkcXO4N_OjmEtHo10I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
