@@ -23,8 +23,13 @@ class TaskRepository {
         } else {
             tasksCollection.document(task.id)
         }
-
         val taskToSave = task.copy(id = document.id)
         document.set(taskToSave)
+    }
+
+    suspend fun deleteTask(taskId: String) {
+        if (taskId.isNotEmpty()) {
+            tasksCollection.document(taskId).delete()
+        }
     }
 }

@@ -19,7 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 actual fun VoiceRecordingButton(onCommandRecognized: (String) -> Unit) {
     val context = LocalContext.current
     var isListening by remember { mutableStateOf(false) }
-    var buttonText by remember { mutableStateOf("🎤 Сказать команду") }
+    var buttonText by remember { mutableStateOf("Сказать команду") }
 
     // Создаем фоновый распознаватель речи
     val speechRecognizer = remember { SpeechRecognizer.createSpeechRecognizer(context) }

@@ -6,10 +6,13 @@ import kotlinx.serialization.Serializable
 data class Task(
     val id: String = "",
     val taskNumber: Int = 0,
+    val title: String = "",
     val priority: String = "Обычный",
     val description: String = "",
-    val status: String = "В процессе", // в процессе, выполнена, требует корректировки
+    val dueDate: String = "",
+    val status: String = "В процессе",
     val comments: String = "",
-    val assignerName: String = "",
-    val assigneeName: String = ""
+    val assignerName: String = "Александр Тарасов",
+    val assigneeName: String = "",
+    val category: String = "ЭО"
 )

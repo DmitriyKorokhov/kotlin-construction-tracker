@@ -10,9 +10,12 @@ import kotlinx.coroutines.launch
 class TaskViewModel : ViewModel() {
     private val repository = TaskRepository()
 
-    // ВАЖНО: Убедитесь, что скобки <List<Task>> написаны слитно, без пробелов!
     private val _tasks = MutableStateFlow<List<Task>>(emptyList())
     val tasks: StateFlow<List<Task>> = _tasks.asStateFlow()
+
+    // Состояние для выбранного раздела бокового меню
+    private val _selectedCategory = MutableStateFlow("Все")
+    val selectedCategory: StateFlow<String> = _selectedCategory.asStateFlow()
 
     init {
         viewModelScope.launch {
@@ -22,14 +25,30 @@ class TaskViewModel : ViewModel() {
         }
     }
 
-    fun addTask(description: String) {
+    fun setCategory(category: String) {
+        _selectedCategory.value = category
+    }
+
+    fun addTask(title: String, description: String, dueDate: String, category: String) {
         viewModelScope.launch {
+            // Находим максимальный номер задачи, чтобы избежать дубликатов
+            val maxNumber = _tasks.value.maxOfOrNull { it.taskNumber } ?: 0
             val newTask = Task(
-                taskNumber = _tasks.value.size + 1,
+                taskNumber = maxNumber + 1,
+                title = title,
                 description = description,
-                status = "В процессе"
+                dueDate = dueDate,
+                status = "В процессе",
+                category = category,
+                assignerName = "Александр Тарасов" // Жестко задаем постановщика
             )
             repository.saveTask(newTask)
+        }
+    }
+
+    fun deleteTask(taskId: String) {
+        viewModelScope.launch {
+            repository.deleteTask(taskId)
         }
     }
 
