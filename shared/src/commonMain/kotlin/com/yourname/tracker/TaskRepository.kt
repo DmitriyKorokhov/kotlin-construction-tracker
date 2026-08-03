@@ -6,14 +6,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class TaskRepository {
-    private val db = Firebase.firestore
-    private val tasksCollection = db.collection("tasks")
+    private val db by lazy { Firebase.firestore }
+    private val tasksCollection by lazy { db.collection("tasks") }
 
-    // Исправлено: добавлено <List<Task>>
     fun getTasks(): Flow<List<Task>> {
         return tasksCollection.snapshots.map { snapshot ->
             snapshot.documents.map { document ->
-                // Исправлено: добавлено <Task>
                 document.data<Task>()
             }
         }

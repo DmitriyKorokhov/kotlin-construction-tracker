@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "173005801962",
-    "project_id": "kotline-construction-tracker",
-    "storage_bucket": "kotline-construction-tracker.firebasestorage.app"
+    "project_number": "435167258859",
+    "project_id": "kotlin-construction-tracker",
+    "storage_bucket": "kotlin-construction-tracker.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:173005801962:android:0f6203d469ff4995550a93",
+        "mobilesdk_app_id": "1:435167258859:android:b4e70e6c223d4fd4c2b6ae",
         "android_client_info": {
           "package_name": "com.yourname.tracker"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDVuWy50zquTB8nULkcXO4N_OjmEtHo10I"
+          "current_key": "AIzaSyCJWCbBs3EAW9n9D6xuonYbLEKj_veCQcg"
         }
       ],
       "services": {
